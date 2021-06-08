@@ -16,6 +16,12 @@ describe('Search', () => {
     expect(input).toHaveProperty('type', 'search');
   });
 
+  it('should render a input placeholder equals Search', () => {
+    render(<Search doSearch={doSearch} />);
+    const input = screen.getByRole('searchbox');
+    expect(input).toHaveProperty('placeholder', 'Search');
+  });
+
   it('should call props.doSearch() when form is submitted', async () => {
     render(<Search doSearch={doSearch} />);
     const form = screen.getByRole('form');
