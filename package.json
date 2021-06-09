@@ -5,11 +5,27 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
     "start": "next start"
   },
   "dependencies": {
+    "@tailwindcss/ui": "^0.6.2",
+    "@testing-library/dom": "^7.31.2",
+    "@testing-library/jest-dom": "^5.13.0",
+    "@testing-library/react": "^11.2.7",
+    "babel-jest": "^27.0.2",
+    "jest": "^27.0.4",
+    "jest-playwright-jsdom": "^0.0.4",
     "next": "10.2.3",
+    "playwright": "^1.11.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "tailwindcss": "^1.7.4"
+  },
+  "devDependencies": {
+    "jest-cli": "^27.0.4",
+    "postcss-flexbugs-fixes": "4.2.1",
+    "postcss-preset-env": "^6.7.0"
   }
 }
