@@ -1,7 +1,7 @@
 import ProductCard from './product-card';
 import { screen, render, fireEvent } from '@testing-library/react';
 
-const product = {
+const mockProduct = {
   title: 'Clock',
   price: '80.00',
   image: 'https://images-na.ssl-images-amazon.com/images/I/618MEYCaUQL._AC_SX522_.jpg',
@@ -10,7 +10,7 @@ const product = {
 const addToCart = jest.fn();
 
 const makeSut = () => {
-  render(<ProductCard addToCart={addToCart} product={product} />);
+  render(<ProductCard addToCart={addToCart} product={mockProduct} />);
 };
 
 describe('ProductCard', () => {
@@ -22,10 +22,10 @@ describe('ProductCard', () => {
   it('should display proper content', () => {
     makeSut();
 
-    expect(screen.getByText(product.title)).toBeInTheDocument();
-    expect(screen.getByText(new RegExp(product.price, 'i'))).toBeInTheDocument();
+    expect(screen.getByText(mockProduct.title)).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(mockProduct.price, 'i'))).toBeInTheDocument();
     expect(screen.getByTestId('image')).toHaveStyle({
-      backgroundImage: product.image,
+      backgroundImage: mockProduct.image,
     });
   });
 
@@ -36,6 +36,6 @@ describe('ProductCard', () => {
     await fireEvent.click(button);
 
     expect(addToCart).toHaveBeenCalledTimes(1);
-    expect(addToCart).toHaveBeenCalledWith(product);
+    expect(addToCart).toHaveBeenCalledWith(mockProduct);
   });
 });
