@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@testing-library/user-event": "^13.1.9",
+    "http-server": "^0.12.3",
     "jest-cli": "^27.0.4",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-preset-env": "^6.7.0"
